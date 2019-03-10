@@ -115,6 +115,17 @@ function injectResultInObject(result, mappedObject, maps, mapId, columnPrefix = 
     // Get the resultMap for this object
     let resultMap = maps.find(map => map.mapId === mapId);
 
+    // Automatically add properties to map
+    if (!resultMap.properties) {
+        resultMap.properties = Object.keys(result).reduce(function(result, field) {
+            if (field.startsWith(columnPrefix)) {
+                result.push(field.replace(columnPrefix, ''));
+            }
+
+            return result;
+          }, []);
+    }
+
     // Copy id property
     let idProperty = getIdProperty(resultMap);
 
