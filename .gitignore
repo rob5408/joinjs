@@ -2,7 +2,7 @@
 node_modules
 
 # Ignore build/release directories
-dist
+# dist
 coverage
 .nyc_output
 

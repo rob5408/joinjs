@@ -24,8 +24,7 @@
     "report-coverage": "cat ./coverage/lcov.info | coveralls",
     "cz-commit": "git-cz",
     "semantic-release": "semantic-release",
-    "docs": "jsdoc src -d apidocs",
-    "install": "npm run build"
+    "docs": "jsdoc src -d apidocs"
   },
   "dependencies": {},
   "devDependencies": {
